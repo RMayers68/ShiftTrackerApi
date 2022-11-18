@@ -1,16 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using ShiftTrackerApi.Models;
-using System.Configuration;
-
-Console.WriteLine(System.Configuration.ConfigurationManager.ConnectionStrings["DbPath"].ConnectionString);
 
 var builder = WebApplication.CreateBuilder(args);
-
 // Add services to the container.
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddDbContext<ShiftContext>(opt =>
-    opt.UseSqlServer(System.Configuration.ConfigurationManager.ConnectionStrings["DbPath"].ConnectionString));
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("DbPath")));
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();

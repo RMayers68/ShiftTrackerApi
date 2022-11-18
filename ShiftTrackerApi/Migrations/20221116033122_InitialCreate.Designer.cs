@@ -12,7 +12,7 @@ using ShiftTrackerApi.Models;
 namespace ShiftTrackerApi.Migrations
 {
     [DbContext(typeof(ShiftContext))]
-    [Migration("20221115221259_InitialCreate")]
+    [Migration("20221116033122_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
