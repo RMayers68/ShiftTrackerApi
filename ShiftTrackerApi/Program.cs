@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddDbContext<ShiftContext>(opt =>
-    opt.UseSqlServer(builder.Configuration.GetConnectionString("DbPath")));
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("ShiftTrackerApiContext")));
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
